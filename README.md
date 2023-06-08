@@ -51,38 +51,61 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 ### PROGRAM 
-/*
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: IYYANAR S
+RegisterNumber:  212222240036
+```
 
+```
+### UP-COUNTER:
+module UC(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_up;
+always@ (posedge clk or posedge reset)
+begin
+if(reset)
+counter_up <= 4'd0;
+else
+counter_up <= counter_up + 4'd1;
+end
+assign counter = counter_up;
+endmodule
 
+### DOWN-COUNTER:
+module DC(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_down;
+always@(posedge clk or posedge reset)
+begin
+if(reset)
+counter_down <= 4'd0;
+else
+counter_down <= counter_down - 4'd1;
+end
+assign counter = counter_down;
+endmodule
+```
+## OUTPUT:
+## UP-COUNTER:
+## RTL Logic:
+![up1](https://github.com/Iyyanar22009120/Exp-7-Synchornous-counters-/assets/118680259/c30860a8-2350-43c4-9c21-579fca261a9a)
 
+## Timing Diagram for Counter:
+![up2](https://github.com/Iyyanar22009120/Exp-7-Synchornous-counters-/assets/118680259/90950189-6594-4645-afd4-51f47f9412b2)
+![up3](https://github.com/Iyyanar22009120/Exp-7-Synchornous-counters-/assets/118680259/e5fbef8a-93e2-4e87-86bd-c4d7028d6125)
 
+## Truth Table:
+![up4](https://github.com/Iyyanar22009120/Exp-7-Synchornous-counters-/assets/118680259/9962e91b-0094-4b05-8f39-2a18a789aee5)
 
+## UP-COUNTER:
+## RTL Logic:
+![down1](https://github.com/Iyyanar22009120/Exp-7-Synchornous-counters-/assets/118680259/dd30620d-efe0-4c9e-81fd-d4f6ea4d21e9)
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+## Timing Diagram for Counter:
+![down2](https://github.com/Iyyanar22009120/Exp-7-Synchornous-counters-/assets/118680259/9dd0ecc7-3aa7-4252-ba4c-734e04208954)
+![down3](https://github.com/Iyyanar22009120/Exp-7-Synchornous-counters-/assets/118680259/7feac700-0134-4a59-8d1c-0c185cd5fb27)
 
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
+## Truth Table:
+![down 4](https://github.com/Iyyanar22009120/Exp-7-Synchornous-counters-/assets/118680259/656d65fb-ef32-4d37-965e-1227fc18fe18)
 
 ### RESULTS 
+Thus 4 bit up and down counters is implemented and its functionality is validated.
